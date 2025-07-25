@@ -1,0 +1,71 @@
+//mixins
+@mixin reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@mixin wh100 {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin flexRowCenter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin grid1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@mixin grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@mixin grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@mixin grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@mixin ma {
+    margin: auto;
+}
+//colors
+$dark: #131313;
+$dark-active: #4e4e4e;
+$light: #fff;
+$light-active: #b1b1b1;
+$orange: #ffbb38;
+$red: #ff5959;
+$blue: #8CD6FF;
+//fonts
+$ibm: 'IBM Plex Mono', monospace;
+$inter: 'Inter', sans-serif;
+//transitions
+$e: all 0.2s ease;
+$ei: all 0.2s ease-in;
+$eio: all 0.2s ease-in-out;
+//breakpoints

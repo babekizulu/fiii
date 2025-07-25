@@ -1,0 +1,78 @@
+@import 'utils';
+
+.page {
+    position: relative;
+    top: 60px;
+    left: 300px;
+    width: calc(100% - 300px);
+    height: 100%;
+    font-family: $inter;
+}
+
+.page-header {
+    @include flexCenter;
+    font-family: $ibm;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.calculator-descriptions {
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+    @include grid3;
+    @include ma;
+}
+
+.description-box {
+    @include flexColumnCenter;
+}
+
+.calculator-description {
+    border-radius: 30px;
+    padding: 0.8rem 3rem;
+    font-family: $ibm;
+    margin: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.orange {
+    border: 3px solid $orange;
+    color: $orange;
+}
+
+.red {
+    border: 3px solid $red;
+    color: $red;
+}
+
+.blue {
+    border: 3px solid $blue;
+    color: $blue;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    background: $light;
+    color: $dark;
+    text-decoration: none;
+    font-family: $inter;
+    font-weight: 600;
+    margin: auto;
+    transition: $eio;
+    &:hover {
+        padding: 0.8rem 3rem;
+        transition: $eio;
+    }
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
