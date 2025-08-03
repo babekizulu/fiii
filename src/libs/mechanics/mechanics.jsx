@@ -1,70 +1,7 @@
 /*
 @Author: Lwandle B. Dlamini
 @Desc: A library of mechanics equations
-@Date: 7/25/2025
-@TODO:
-- velocity
-- acceleration
-- equations of motion
-- newtons 2nd law
-- weight
-- dry friction
-- centripetal acceleration
-- momentum
-- impulse
-- impulse-momentum
-- work
-- work-energy
-- kinetic energy
-- general potential energy
-- gravitational potential energy
-- efficiency
-- power
-- power-velocity
-- angular velocity
-- angular acceleration
-- equations of rotation
-- torque
-- 2nd law for rotation
-- moment of inertia
-- rotational work
-- rotational power
-- rotational kinetic energy
-- angular momentum
-- angular impulse
-- angular impulse momentum
-- universal gravitation
-- gravitational field
-- gravitational potential energy
-- gravitational potential
-- orbital speed
-- escape speed
-- hooke's law
-- spring potential energy
-- simple harmonic oscillator
-- simple pendulum
-- frequency
-- angular frequency
-- density 
-- pressure
-- pressure in a fluid
-- buoyancy
-- mass flow rate
-- volume flow rate
-- mass continuity 
-- volume continuity
-- bernoulli's equation
-- dynamic viscosity 
-- kinematic viscosity
-- drag
-- mach number
-- reynolds number
-- froude number
-- young's modulus
-- shear modulus
-- bulk modulus
-- surface tension
-
+@Date: 8/3/2025
 */
 
 class Mechanics {
@@ -214,5 +151,89 @@ class Mechanics {
 
     hookesLaw = (constantOfProportionality, initialSpringLength, finalSpringLength) => {
         return (parseInt(constantOfProportionality)*(parseInt(finalSpringLength) - parseInt(initialSpringLength))).toFixed(3);
+    }
+
+    springPotentialEnergy = (constantOfProportionality, initialSpringLength, finalSpringLength) => {
+        return (0.5*parseInt(constantOfProportionality)*(parseInt(finalSpringLength) - parseInt(initialSpringLength))**2).toFixed(3);
+    }
+
+    simpleHarmonicOscillator = (mass, constantOfProportionality) => {
+        return (2*Math.pi*Math.sqrt(parseInt(mass)/parseInt(constantOfProportionality))).toFixed(3);
+    }
+
+    simplePendulum = (length, gravity) => {
+        return (2*Math.pi*Math.sqrt(parseInt(length)/parseInt(gravity))).toFixed(3);
+    }
+
+    frequency = (period) => {
+        return (1/parseInt(period)).toFixed(3);
+    }
+
+    angularFrequency = (frequency) => {
+        return (2*Math.pi*parseInt(frequency)).toFixed(3);
+    }
+
+    density = (mass, volume) => {
+        return (parseInt(mass)/parseInt(volume)).toFixed(3);
+    }
+
+    pressure = (force, area) => {
+        return (parseInt(force)/parseInt(area)).toFixed(3);
+    }
+
+    pressureInAFluid = (initialPressure, density, depth, gravity) => {
+        return (parseInt(initialPressure) + parseInt(density)*parseInt(depth)*parseInt(gravity)).toFixed(3);
+    }
+
+    buoyancy = (density, volume, gravity) => {
+        return (parseInt(density)*parseInt(volume)*parseInt(gravity)).toFixed(3);
+    }
+
+    massFlowRate = (initialMass, finalMass, initialTime, finalTime) => {
+        return (parseInt(finalMass) - parseInt(initialMass))/(parseInt(finalTime) - parseInt(initialTime)).toFixed(3);
+    }
+
+    volumeFlowRate = (initialVolume, finalVolume, initialTime, finalTime) => {
+        return (parseInt(finalVolume) - parseInt(initialVolume))/(parseInt(finalTime) - parseInt(initialTime)).toFixed(3);
+    }
+
+    dynamicViscosity = (shearStress, shearRate) => {
+        return (parseInt(shearStress)/parseInt(shearRate)).toFixed(3);
+    }
+
+    kinematicViscosity = (dynamicViscosity, density) => {
+        return (parseInt(dynamicViscosity)/parseInt(density)).toFixed(3);
+    }
+
+    drag = (density, coefficientOfDrag, area, velocity) => {
+        return (0.5*parseInt(density)*parseInt(coefficientOfDrag)*parseInt(area)*parseInt(velocity)**2).toFixed(3);
+    }
+
+    machNumber = (velocity, speedOfSound) => {
+        return (parseInt(velocity)/parseInt(speedOfSound)).toFixed(3);
+    }
+
+    reynoldsNumber = (density, velocity, diameter, dynamicViscosity) => {
+        return (parseInt(density)*parseInt(velocity)*parseInt(diameter)/parseInt(dynamicViscosity)).toFixed(3);
+    }
+
+    froudeNumber = (velocity, length, gravity) => {
+        return (parseInt(velocity)/Math.sqrt(parseInt(length)*parseInt(gravity))).toFixed(3);
+    }
+
+    youngsModulus = (uniaxialStress, strain) => {
+        return (parseInt(uniaxialStress)/parseInt(strain)).toFixed(3);
+    }
+
+    shearModulus = (shearStress, shearStrain) => {
+        return (parseInt(shearStress)/parseInt(shearStrain)).toFixed(3);
+    }
+
+    bulkModulus = (initialVolume, finalVolume, initialPressure, finalPressure) => {
+        return (-parseInt(initialVolume)*(parseInt(initialPressure) - parseInt(finalPressure))/(parseInt(initialVolume) - parseInt(finalVolume))).toFixed(3);
+    }
+
+    surfaceTension = (forceActingOnTheSurface, lengthOfTheSurface) => {
+        return (parseInt(forceActingOnTheSurface)/parseInt(lengthOfTheSurface)).toFixed(3);
     }
 }
