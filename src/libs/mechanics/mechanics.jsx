@@ -133,7 +133,7 @@ class Mechanics {
         return (parseInt(gravitationalConstant)*parseInt(mass)/parseInt(distanceBetweenCenterOfObjects)**2).toFixed(3);
     }
 
-    gravitationalPotentialEnergy = (gravitationalConstant=6.67430e-11, mass1, mass2, distanceBetweenCentersOfObjects) => {
+    gravitationalPotentialEnergy2 = (gravitationalConstant=6.67430e-11, mass1, mass2, distanceBetweenCentersOfObjects) => {
         return (parseInt(gravitationalConstant)*(parseInt(mass1)*parseInt(mass2))/parseInt(distanceBetweenCentersOfObjects)).toFixed(3);
     }
 
@@ -237,3 +237,5 @@ class Mechanics {
         return (parseInt(forceActingOnTheSurface)/parseInt(lengthOfTheSurface)).toFixed(3);
     }
 }
+
+module.exports = new Mechanics();
