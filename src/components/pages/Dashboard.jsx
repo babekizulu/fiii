@@ -7,9 +7,7 @@ function Dashboard() {
     return (
         <section className='page'>
             <h1 className="page-header">
-                A Multi-Disciplinary 
-                <br/>
-                Calculator App.
+                learn while solving problems.
             </h1>
             <div className='calculator-descriptions'>
                 <div className="description-box">
